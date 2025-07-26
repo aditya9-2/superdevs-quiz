@@ -40,7 +40,8 @@ const userSignin = async (req: Request, res: Response) => {
         }
 
         const token = jwt.sign({
-            userId: existingUser.id,
+            id: existingUser.id,
+            role: existingUser.role
 
         }, process.env.JWT_SECRET_KEY!,
             {
